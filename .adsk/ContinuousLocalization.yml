@@ -1,0 +1,124 @@
+# This is the UPI name used within L10N system. Please verify the shortname for your product with L10 representative.
+# UPI is an identifier for every product and release that Autodesk creates. UPI includes the Product, Release,
+# Build Version and language information to uniquely identify a Product and its entities.
+# AKNTEST is the product name given fot staging test project.
+product: AKNTEST
+
+
+# LE Program Lead and Vendor Lead for the given Product/Project. This email will be used to send notifications
+loc_contact: [sabbir.alam@autodesk.com]
+
+
+# Approvers who can merge PRs (Pull Requests) into the relevant branch. It is recommended to set up an alias so that
+# it does not become a bottleneck for one person. It can be a single user or alias. Engage with your DEV contact to
+# agree what should go there. Use an active directory id that is used to login git.autodesk.com.
+pr_notification_approvers: ["alams3"]
+
+
+# In case this parameter is set to 'true', it will use PR template from .github/PULL_REQUEST_TEMPLATE.md
+# (from repo's default branch)for creating new PRs. Content of this file will be attached right after text created by
+# 'escbuild' service user.
+use_pr_template: true
+
+
+# Defines if CL should use Memsource localization service instead of WS.
+#     if 'localization_service' is not set → use the current service (CL-FLS-WS)
+#     if 'localization_service'  is set to  Memsource → use new  service (CL-FLM-Memsource)
+#     if 'localization_service' is set to something else → raise an exception
+localization_service: Memsource
+
+
+# Defines all the branches that will require localization. For Doc, you can specify multiple branches, for Software
+# only one branch is supported for localization i.e master.
+branch_to_localize: ["master-branch-1"]
+
+
+# This list helps in creating the mapping for the languages that will be used in the create target folder within git repo.
+# It is platform specific to the tool such as Microsoft.Net, Java etc..
+# Uncomment (remove the #) the section that suits the platform, e.g. for CL for CLC projects uncomment "langThreeLetter".
+# Mapping of languages to generate the folder structure.
+lang_definition:
+  langCustom: {kor: KOR, fra: FRA, ptg: PTG, enu: ENU, chs: chinaCHS, jpn: JPN, rus: RUS, ita: ITA, eng: ENG, plk: POLAND, deu: DEU, csy: CSY, nls: NLS, esp: ESP, hun: HUN, cht: CHT, ptb: PTBrasil} 
+  langThreeLetter: {cat: cat, eng: eng, rus: rus, ita: ita, jpn: japanese, chs: chinaSimpl, enu: enu, fra: fra, ptg: ptg, kor: kor, trk: turkey, ptb: ptb, cht: chinaTraditional, hun: hun, esp: esp, csy: csy, deu: germany, plk: polanddd, chk: chk}
+  #langMsNet: {dnk: da-DK, csy: cs-CZ, plk: pl-PL, deu: de-DE, nld: nl-NL, fin: fi-FI, hrv: hr-HR, cht: zh-TW, ptb: pt-BR, swe: sv-SE, hun: hu-HU, esp: es-ES, ptg: pt-PT, fra: fr-FR, enu: en-US, trk: tr-TR, kor: ko-KR, ita: it-IT, rus: ru-RU, nor: nb-NO, eng: en-GB, rom: ro-RO, cat: ca-ES, chs: zh-CN, jpn: ja-JP}
+  #langJava: {chs: zh_CN, jpn: ja_JP, ita: it_IT, rus: ru_RU, nor: nb_NO, eng: en_GB, cat: ca_ES, rom: ro_RO, trk: tr_TR, kor: ko_KR, ptg: pt_PT, fra: fr_FR, enu: en_US, esp: es_ES, swe: sv_SE, hun: hu_HU, cht: zh_TW, ptb: pt_BR, plk: pl_PL, deu: de_DE, nld: nl_NL, hrv: hr_HR, fin: fi_FI, dnk: da_DK, csy: cs_CZ}
+  #langISO639_1: {ptb: pt, esp: es, swe: sv, hun: hu, csy: cs, dnk: da, plk: pl, deu: de, nld: nl, fin: fi, hrv: hr, ita: it, nor: no, rus: ru, cat: ca, rom: ro, chs: zh, jpn: ja, fra: fr, enu: en, trk: tr, kor: ko}
+  #langBCP47: {swe: sv, hun: hu, esp: es, ptb: pt-BR, cht: zh-Hant, fin: fi, hrv: hr, nld: nl, deu: de, plk: pl, dnk: da, csy: cs, jpn: ja, chs: zh-Hans, rom: ro, cat: ca, eng: en-GB, nor: yes, rus: ru, ita: it, kor: ko, trk: tr, enu: en, fra: fr, ptg: pt-PT} 
+  langBCP47: {swe: sv, hun: hunn, esp: es, ptb: pt-BR, cht: zh-Hant, fin: fi, hrv: hr, nld: nl-NL, deu: de-lang, plk: polland,jpn: japan,chs: zh-chinaSimpl}
+
+
+# List of languages supported within CL.
+
+# 'spa-MX' => 'esm'  Mexican Spanish   | 'por-BR' => 'ptb'  Brazilian Portuguese | 'por-PT' => 'ptg',	Portuguese
+# 'ces-CZ' => 'csy', Czech Republic    | 'fra-FR' => 'fra',	French               | 'deu-DE' => 'deu',	German
+# 'ita-IT' => 'ita', Italian           | 'rus-RU' => 'rus',	Russian              | 'spa-ES' => 'esp',	European Spanish
+# 'hun-HU' => 'hun', Hungarian         | 'dan-DK' => 'dan',	Danish               | 'pol-PL' => 'plk',	Polish
+# 'kor-KR' => 'kor', Korean            | 'swe-SE' => 'sve',	Swedish              | 'jpn-JP' => 'jpn',	Japanese
+# 'zho-CN' => 'chs', Simplified Chinese| 'zho-TW' => 'cht',	Traditional Chinese  | 'ron-RO' => 'rom',	Romanian
+# 'eng-US' => 'enu', US-English        | 'eng-GB' => 'eng', UK-English           | 'fra-CA' => 'frc'	French Canadian "
+# 'tur-TR' => 'trk', Turkish           | 'vie-VN' => 'vit',	Vietnamese           | 'nor-NO' => 'nor',	Norwegian
+# 'nld-NL' => 'nld', Netherland        | 'hrv-HR' => 'hrv',	Croatian             | 'fin-FI' => 'fin',	Finland
+# 'ara-AE' => 'ara', Armenian          | 'tha-TH' => 'tha',	Thailand             | 'ind-ID' => 'ind',	Indonesian
+approved_languages: [deu]
+
+
+# Used to identify what content is localized, does it contain software strings or documentation help content.
+components:
+   # Defines whether it is Doc related to help content or Soft related to software strings.
+   # Example: "Doc" or "Soft" (case-sensitive)
+ - type:  Doc
+   # If content type is "Doc", specify the folder names along with the file rules that contains the files to localize.
+   # If you have multiple publications, you will have to define them independently.
+   name_of_publication: Release-Notes_1_0
+
+
+   # Defines the path of source folder from where files will be retrieved and target folder where localized content will be pushed in the git repo.
+   # The two values are separated by a comma. Be sure to escape your slashes in a way that is appropriate for your platform. Should be preceded by a dash.
+   file_rules:
+    #- resource\enu2\translations\source\*.(po|md|txt|pot), resource\%langThreeLetter%\translations\source\*.(po|md|txt|pot)
+    #- resource\enu2\translations\source\manual-updates\*.(po|md|txt|pot), resource\%langThreeLetter%\translations\source\manual-updates\*.(po|md|txt|pot)
+    - cl-clc\source\files\**.md, cl-clc\destination\files\%langCustom%\**.md
+    #- clc\commonuserdoc1\source\settings.json, %langCustom%\clc\commonuserdoc1\source\settings.json
+    #- locales\enu\*.md, locales\%langBCP47%\*.md
+    #- clc\desktop-connector\source\**.md, %langThreeLetter%\clc\desktop-connector\source\**.md     
+    #- locales\enu\translations\*.(yml|properties|md), locales\%langCustom%\translations\*.(yml|properties|md)  
+   #- locales\enu\folder_1\*.(yml|properties|md), locales\%langCustom%\folder_1\*.(yml|properties|md)
+   # This is optional and used only for localizing Doc images.
+   # Defines the path of source folder from where images will be retrieved and target folder where localized images will be pushed in the git repo.
+
+
+   #The rule that is used to rename the source files before uploading the files to FLM or WS. Should be written below the file_rules.
+   # The two values are separated by a comma. Be sure to escape your slashes in a way that is appropriate for your platform. Should be preceded by a dash.
+   #rename_before_upload_rules:
+    #- resource\enu2\translations\source\*.pot, resource\enu2\translations\source\*.po
+    #- resource\enu2\translations\source\manual-updates\*.pot, resource\enu2\translations\source\manual-updates\*.po
+
+
+   # This is optional and only needs to be used if there are images in the Git repo which need to be localized.
+   # For Doc type only: an optional list of image files inside the /source/images folder that should be localized, and
+   # specify the format defined in the lang_definition parameter of the target folder where the localized images will
+   # be created. The two values are separated by a comma. Be sure to escape your slashes in a way that is appropriate
+   # for your platform. Should be preceded by a dash.
+   #image_rules: # optional
+   # - clc\*.jpg, Images\%langCustom%\clc\*.jpg
+
+
+   #languages that will released to the customers with Professional translation.
+   # List of specific approved languages that your content needs to be localized into. Each specified language must be
+   #vformatted in the ThreeLetter format, regardless of which lang_definition you selected in the previous parameter
+   approved_languages: [deu, jpn]
+
+
+# these parameters are optional and will be used only for localization testing or scoping.
+optional:
+# The following parameters are optional and should only be used for localization testing or scoping purposes. If these workflows are not needed for the Product, please remove this "optional section" from this file. 
+  #content_owner: E2E
+  content_owner: CLC
+  # Only use if you want to override the default Content Owner value of "CLC". If content_owner is not defined, it will be set to CLC by default.
+  globalization_testing: [deu]
+  #scoping: [deu]
+  # Used for Software projects using the Localization Platform - rawMt and Passolo - pseudo tranlation will be used.
+  ignore_test_branch: false
+  # This workflow applies to Doc and LP only. Use to scope wordcounts against translation memories to understand potential costs of translation, before the translation process is started for real. It will not send files for translation.
+  use_fallback: false
+  automerge_export_branch: false
