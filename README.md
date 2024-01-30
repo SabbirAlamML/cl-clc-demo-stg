@@ -1,2 +1,2 @@
 # cl-jenkins-demo-stg
-test 6
+test 7
